@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Joonis</title>
+	<script type="text/javascript">
+		function draw(){
+			var g=document.getElementById("board").getContext("2d");
+			var width=parseInt(document.getElementById("boxwidth").value);
+			var height=parseInt(document.getElementById("boxheight").value);
+			var left=parseInt(document.getElementById("boxleft").value);
+			var top=parseInt(document.getElementById("boxtop").value);
+			g.fillStyle="yellow";
+			g.fillRect(0,0,300,200);
+			g.fillStyle="black";
+			g.fillRect(left, top, width, height);
+			g.fillText(height, left-20, top+20);
+			g.fillText(width, left+20, top-20);
+		}
+	</script>
+</head>
+<body>
+	<h1>Canvas</h1>
+	<canvas id="board" width="300" height="200" 
+		style="background-color: yellow"></canvas><br />
+	<input type="text" id="boxleft" value="40" />
+		<input type="text" id="boxtop" value="40" /><br />
+	<input type="text" id="boxwidth" value="40"> x
+	<input type="text" id="boxheight" value="60" />
+	<input type="button" value="Draw" onclick="draw()" />
+</body>
+</html>

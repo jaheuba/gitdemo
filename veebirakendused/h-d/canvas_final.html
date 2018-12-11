@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drawing</title>
+	<script type="text/javascript">
+		function draw() {
+			var g=document.getElementById("board").getContext("2d");
+			var width=parseint (document.getElementById("widthbox").value);
+			var height=parseint(document.getElementById("heightbox").value);
+			var left=parseint(document.getElementById("leftbox").value);
+			var top=parseint(document.getElementById("topbox").value);
+			g.fillStyle="yellow";
+			g.fillRect (0, 0, 300, 200);
+			g.fillStyle="black";
+			g.fillRect (left, top, width, height);
+			g.fillText (height, left-20, top+20);
+			g.fillText (width, left+20, top-20);
+		}
+	</script>
+</head>
+<body>
+	<h1>Drawing</h1>
+	<canvas id="board" width="300" height="200" style="background-color:yellow"></canvas><br />
+	<input type="text" id="leftbox" value="40" />
+	<input type="text" id="topbox" value="40" />
+	<input type="text" id="widthbox" value="40" />
+	<input type="text" id="heightbox" value="60" />
+	<input type="button" value="Draw" onclick="draw()" />
+</body>
+</html>

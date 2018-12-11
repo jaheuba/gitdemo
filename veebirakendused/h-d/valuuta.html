@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TarkTransfeer</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function calculate(){
+			var amount=
+				parseFloat(document.getElementById("amount").value);
+			var rate=amount*0.8;
+			var fee=rate*0.005;
+			var sum=rate-fee
+			sum=sum.toFixed(2);
+			document.getElementById("sum").innerHTML=sum;
+		}
+	</script>
+</head>
+<body>
+	<h1>Currency calculator</h1>
+	Amount to convert:
+	<input type="text" id="amount" />
+	<input type="button" value="convert" onclick="calculate();" />
+	<br>
+	You will get:
+	<div id="sum" />
+
+</body>
+</html>

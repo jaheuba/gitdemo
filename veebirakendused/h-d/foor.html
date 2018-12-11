@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Traffic light</title>
+	<script type="text/javascript">
+		var state="red";
+		function draw(){
+			var g=document.getElementById("board").getContext("2d");
+			g.fillStyle="white";
+			g.fillRect(0, 0, 300, 200);
+			g.fillStyle="black";
+			g.fillRect(70, 5, 60, 150);
+			g.lineWidth=3;
+			g.strokeStyle="red"; g.fillStyle="red";
+			g.beginPath();
+			g.arc(100, 30, 20, 0, 2*Math.PI, true);
+			if (state=="red") {
+				g.fill()
+			}else {
+				g.stroke();
+			}
+			g.strokeStyle="yellow"; g.fillStyle="yellow";
+			g.beginPath();
+			g.arc(100, 80, 20, 0, 2*Math.PI, true);
+			if(state=="yellow") {
+				g.fill()
+			}else {
+				g.stroke();
+			}
+			g.strokeStyle="green"; g.fillStyle="green";
+			g.beginPath();
+			g.arc(100, 130, 20, 0, 2*Math.PI, true);
+			if(state=="green"){
+				g.fill()
+			}else {
+				g.stroke();
+			}
+		}
+		function red(){state="red"; draw();}
+		function yellow(){state="yellow"; draw();}
+		function green(){state="green"; draw();}
+	</script>
+</head>
+<body onload="draw();">
+	<h1>Thingy</h1>
+	<canvas id="board" width="300" height="200"
+		style="background-color:yellow">
+	</canvas><br />
+	<input type="button" value="red" onclick="red();" />
+	<input type="button" value="yellow" onclick="yellow();" />
+	<input type="button" value="green" onclick="green();" />
+</body>
+</html>

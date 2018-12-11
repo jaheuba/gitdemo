@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Converter</title>
+	<script type="text/javascript">
+		function convert(){
+			var inch=
+			parseFloat(document.getElementById("inch").value);
+			document.getElementById("cm").innerHTML=inch*2.54
+		}
+	</script>
+</head>
+<body>
+	<h1>Inches to Centimeters</h1>
+	inch:
+	<input type="text" id="inch"/>
+	<input type="button" value="convert" onclick="convert();" />
+	<h3>result:</h3>
+	<div id="cm"></div>
+
+</body>
+</html>

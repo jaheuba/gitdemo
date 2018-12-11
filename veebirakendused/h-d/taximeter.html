@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Taximeter</title>
+	<script type="text/javascript">
+		function fare(){
+			var base= //base fare
+			parseFloat(document.getElementById("base").value);
+			var price= //price per km
+			parseFloat(document.getElementById("price").value);
+			var km= //distance
+			parseFloat(document.getElementById("km").value);
+			var pay=base+price*km;
+			pay=pay.toFixed(2);
+			document.getElementById("sum").innerHTML=pay;
+		}
+	</script>
+</head>
+<body>
+	<h1>Taximeter</h1>
+	Base fare:
+	<input type="text" id="base"><br>
+	Price per km:
+	<input type="text" id="price"><br>
+	Travel distance:
+	<input type="text" id="km"><br>
+	<input type="button" value="Calculate" onclick="fare();" />
+		<h2>Your taxi fare is:</h2>
+		<div id="sum" />
+
+</body>
+</html>

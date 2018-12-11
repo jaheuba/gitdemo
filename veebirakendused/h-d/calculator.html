@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Käibemaksu arvutus</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript">
+		function arvuta (){
+			var letihind=
+				parseFloat(document.getElementById("letihind").value);
+			var km=letihind*20/120;
+			// km=Math.round(km*100)/100; //ümardus 2 kohta pärast koma.
+			km=km.toFixed(2);
+			document.getElementById("vastus").innerHTML=km;
+		}
+	</script>
+</head>
+<body>
+	<h1>Katsetuste leht</h1>
+		Palun sisesta letihind:
+		<input type="text" id="letihind">
+		<input type="button" value="OK" onclick="arvuta();" />
+		<div id="vastus">
+			Vastuse koht.
+		</div>
+
+</body>
+</html>
